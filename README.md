@@ -18,3 +18,8 @@ Rails Stripe, Linkedin
    docker-compose up -d --force-recreate database
    
 5. docker volume [ls rm]
+6. docker-compose exec web rails g scaffold Product name description:text secret:text
+6b. gem 'devise', '~> 4.2'
+    gem 'bcrypt'
+    gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+7. docker-compose exec web rails db:migrate
