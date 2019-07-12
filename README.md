@@ -1,8 +1,8 @@
 Rails Stripe, Linkedin
-7/7/2019, Sun
+7/10/2019, Thurs
 
-chp 3.1
-Signing up for Stripe
+chp 3.4
+sending a card token to the server
 
 #user
 1. halvong@yahoo.com:123456
@@ -13,7 +13,7 @@ http://localhost:3000/products/new
 #Rails
 1. docker run -i -t --rm -v ${PWD}:/usr/src/app ruby:2.6.3 bash
    gem install rails
-   rails new myapp -d postgresql --skip-test --skip-bundle
+   rails new myapp -d postgresql --no-ri --no-rdoc
    exit
 2. docker build -t docker_rails .
 
@@ -38,8 +38,16 @@ http://localhost:3000/products/new
    docker-compose exec web rails db:migrate
 10. getbootstrap.com
 
-
+11. docker-compose run web bash
+    EDITOR="vi" bin/rails credentials:edit
+    
+    publishable key: pk_test_NHaWScNKrBj7SNURMwdIeaYF
+    secret key: sk_test_kbcSQGO1FXbEaPjUtVaCPBEC
 ---
+
+stripe_public_key: pk_test_NHaWScNKrBj7SNURMwdIeaYF 
+stripe_private_key: sk_test_kbcSQG01FXbEaPjUtVaCPBEC
+
 Version Gemfile
 Fetching rake 12.3.2
 Installing rake 12.3.2
