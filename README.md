@@ -1,14 +1,25 @@
 Rails Stripe, Linkedin
-7/10/2019, Thurs
+7/13/2019, Fri
 
-chp 3.4
-sending a card token to the server
+chp last video 
+Making tubolinks compatible
+
+CC works well.
 
 #user
 1. halvong@yahoo.com:123456
 
 #urls
 http://localhost:3000/products/new
+
+#Notes
+Look for stripeToken, authenticity_token
+
+#you should see this
+hidden tags
+    scrf-token
+    stripe-public-key
+
 
 #Rails
 1. docker run -i -t --rm -v ${PWD}:/usr/src/app ruby:2.6.3 bash
@@ -48,7 +59,6 @@ http://localhost:3000/products/new
 stripe_public_key: pk_test_NHaWScNKrBj7SNURMwdIeaYF 
 stripe_private_key: sk_test_kbcSQG01FXbEaPjUtVaCPBEC
 
-Version Gemfile
 Fetching rake 12.3.2
 Installing rake 12.3.2
 Fetching concurrent-ruby 1.1.5
@@ -160,6 +170,8 @@ Fetching devise 4.6.2
 Installing devise 4.6.2
 Fetching jbuilder 2.9.1
 Installing jbuilder 2.9.1
+Fetching jquery-rails 4.3.5
+Installing jquery-rails 4.3.5
 Fetching rb-fsevent 0.10.3
 Installing rb-fsevent 0.10.3
 Fetching rb-inotify 0.10.0
