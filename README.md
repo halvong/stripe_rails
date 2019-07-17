@@ -1,10 +1,7 @@
 Rails Stripe, Linkedin
-7/13/2019, Saturday
+7/17/2019, Tues
 
-chp last video 
-Making tubolinks compatible
-
-CC works well.
+Creating a plan in Stripe
 
 #user
 1. halvong@yahoo.com:123456
