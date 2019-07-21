@@ -1,10 +1,12 @@
 Rails Stripe, Linkedin
-7/17/2019, Tues
+7/21/2019, Sun
 
-Creating a plan in Stripe
+chp5, displaying subscription and card on file
 
 #user
 1. halvong@yahoo.com:123456
+2. halvong5@gmail.com:123456
+3. dcarroll@hotmail.com:123456
 
 #urls
 http://localhost:3000/products/new
@@ -65,6 +67,9 @@ hidden tags
 14. docker-compose exec rails c
         Stripe::Customer.all        
         
+15. docker-compose exec web rails db:migrate VERSION=0
+16. docker-compose exec web rails db:migrate:status
+     
     
 ---
 
