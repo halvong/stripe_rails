@@ -1,13 +1,12 @@
 Rails Stripe, Linkedin
-7/13/2019, Fri
+7/21/2019, Sun
 
-chp last video 
-Making tubolinks compatible
-
-CC works well.
+chp5, displaying subscription and card on file
 
 #user
 1. halvong@yahoo.com:123456
+2. halvong5@gmail.com:123456
+3. dcarroll@hotmail.com:123456
 
 #urls
 http://localhost:3000/products/new
@@ -42,6 +41,8 @@ hidden tags
 6b. gem 'devise', '~> 4.2'
     gem 'bcrypt'
     gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+    gem 'stripe', '~> 4.21', '>= 4.21.2'
+    
 7. docker-compose exec web rails db:migrate
 8. docker-compose exec web rails g devise:install -- 2.2 
    docker-compose exec web rails g devise:views   -- 2.2 
@@ -49,15 +50,28 @@ hidden tags
    docker-compose exec web rails db:migrate
 10. getbootstrap.com
 
-11. docker-compose run web bash
-    EDITOR="vi" bin/rails credentials:edit
-    
-    publishable key: pk_test_NHaWScNKrBj7SNURMwdIeaYF
-    secret key: sk_test_kbcSQGO1FXbEaPjUtVaCPBEC
----
+11. app/assets/javascripts/application.js
+        //= require jquery
+        //= require jquery_ujs
 
-stripe_public_key: pk_test_NHaWScNKrBj7SNURMwdIeaYF 
-stripe_private_key: sk_test_kbcSQG01FXbEaPjUtVaCPBEC
+11. docker-compose run web bash
+        EDITOR="vi" bin/rails credentials:edit
+        
+        See LastPass 
+    
+12. app/views/layouts/application.html.erb L10  
+        <%= javascript_include_tag 'application', 'https://js.stripe.com/v2/', 'data-turbolinks-track': 'reload' %>
+        <%= tag :meta, name: "stripe-public-key", content: Rails.application.credentials.stripe_public_key %>
+13. create config/initializers/stripe.rb
+        Stripe.api_key = Rails.application.credentials.stripe_private_key
+14. docker-compose exec rails c
+        Stripe::Customer.all        
+        
+15. docker-compose exec web rails db:migrate VERSION=0
+16. docker-compose exec web rails db:migrate:status
+     
+    
+---
 
 Fetching rake 12.3.2
 Installing rake 12.3.2

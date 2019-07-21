@@ -3,4 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def stripe_customer
+    if stripe_id?
+      Stripe::Customer.retrieve(stripe_id)
+    else
+      stripe_customer = Stripe::Customer.create(email: email)
+      update(stripe_id: stripe_customer.id)
+      stripe_customer
+    end
+  end
+
+  def subscribed?
+    stripe_subscription_id? || (expires_at? && Time.zone.now < expires_at)
+  end
+
 end

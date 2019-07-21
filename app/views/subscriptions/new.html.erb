@@ -6,7 +6,7 @@
   <div class="form-row">
     <label>
       <span>Card Number</span>
-      <input type="text" size="20" data-stripe="number" value="4242 4242 4242 4242">
+      <input type="text" size="20" data-stripe="number" value="">
     </label>
   </div>
 
@@ -26,7 +26,7 @@
     </label>
   </div>
 
-
+  <%= hidden_field_tag :plan, params[:plan] %>
     <input type="submit" class="submit" value="Submit Payment">
 <% end %>
 

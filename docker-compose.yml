@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     build: .
+    image: halvong/stripe_rails_web
     ports:
       - "3000:3000"
     environment:
