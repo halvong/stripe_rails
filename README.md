@@ -1,12 +1,13 @@
 Rails Stripe, Linkedin
-7/21/2019, Sun
+12/27/2019, Fri
 
-chp5, displaying subscription and card on file
+chp6, cancel your subscription 
 
 #user
 1. halvong@yahoo.com:123456
 2. halvong5@gmail.com:123456
 3. dcarroll@hotmail.com:123456
+3. peter@hotmail.com:123456
 
 #urls
 http://localhost:3000/products/new
