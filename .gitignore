@@ -173,7 +173,7 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
-
+.keep
 # Sonarlint plugin
 .idea/sonarlint
 
